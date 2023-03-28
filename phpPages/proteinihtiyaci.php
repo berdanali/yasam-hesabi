@@ -7,12 +7,10 @@
   <title>PROTEİN HESAPLA</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="../stylePages/proteinihtiyacı.css">
-
 </head>
 <body>
 </head>
 <body>
- 
   <nav>
   <a href="../secim.html" style="position: absolute; top: 10px; right: 10px; padding: 30px 20px;  color:green; text-decoration: none;">Ana Sayfa</a>
     <div class="logo">
@@ -79,17 +77,20 @@ Yağsız Vücut Ağırlığı (KADIN):= (0.65 * Boy[cm]) – 50.74
   else{
     echo "Lütfen Cinsiyeti Kadın veya Erkek Olarak Giriniz";
   }
-}
+  $boy = filter_var(htmlentities(floatval($_POST['boy'])), FILTER_SANITIZE_NUMBER_FLOAT);
+  $kilo = filter_var(htmlentities(floatval($_POST['kilo'])), FILTER_SANITIZE_NUMBER_FLOAT);
+  $sex = isset($_POST['sex']) ? $_POST['sex'] : '';
+  
+  if ($boy && $kilo && $sex) {
+    calculate($boy, $kilo, $sex);
+  } else {
+    echo "Lütfen tüm alanları doldurun.";
+  }
+  
+ }
 
-//Boy-100-[(boy-150)/4] ideal kilo formulu
-
-$boy= filter_var(htmlentities(floatval($_POST['boy'])), FILTER_SANITIZE_NUMBER_FLOAT);
-$kilo = filter_var(htmlentities(floatval($_POST['kilo'])), FILTER_SANITIZE_NUMBER_FLOAT);
-$sex = $_POST['sex'];
-calculate($boy, $kilo ,$sex);
 ?>
 </div>
-
     </div>
     </div>
   </div>
