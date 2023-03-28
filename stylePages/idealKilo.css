@@ -66,8 +66,7 @@
         border-radius: 50px;
             
             }
-            
-        header .sema h4{
+ .sema h4{
         position: absolute;
         width: 430px;
         height: 40px;
@@ -87,15 +86,26 @@
         color: #000000;
         
         }
-        header .box{
+      .box{
 
             margin-top: 10rem;
             margin-right: 20rem;
       
         
-        
-        
-        
-        
+        }
+.sonuc3{
+          position: absolute;
+          text-align:left;
+          color: #09c213;
+          display: flex;
+          left: 43rem;
+          top: 42rem;
+          width: 26rem;
+          height: 23rem;
+          text-align: center;
+          font-size: 1.4rem;
+          font-family: 'Rubik';
+
+           
         
         }

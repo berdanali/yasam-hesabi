@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>BKI HESAPLAYICI</title>
+  <title>YAĞ ORANI HESAPLAYICI</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="../stylePages/yagOrani.css">
 </head>
 <body>
 
   <nav>
+  <a href="../secim.html" style="position: absolute; top: 10px; right: 10px; padding: 30px 20px;  color:green; text-decoration: none;">Ana Sayfa</a>
     <div class="logo">
       <p><img src="../images/attachment_124010263-removebg-preview (1).png" alt=""></p>
       
@@ -22,7 +23,8 @@
   <header class="mt-3 text-center row">
     <div class="col-sm-10 align-right">
 	
-      <h4 class="text-secondary  ">YAĞ ORANI HESAPLAMA</h4>
+      <h4 class="text-secondary  " style="
+      margin-left: -1.3rem;">YAĞ ORANI HESAPLAMA</h4>
 	  
     </div>
   </header>
@@ -36,7 +38,7 @@
           position: absolute;
           width: 400px;
           height: 63px;
-         margin-top:6rem;
+         margin-top:5rem;
          margin-left: -3rem;
           
           
@@ -56,7 +58,7 @@
           position: absolute;
           width: 400px;
           height: 63px;
-          margin-top:10rem;
+          margin-top:9rem;
          margin-left: -3rem;
           
           
@@ -74,7 +76,7 @@
           position: absolute;
           width: 400px;
           height: 63px;
-          margin-top:14rem;
+          margin-top:13rem;
          margin-left: -3rem;
           
           background: #EDEDED;
@@ -91,7 +93,7 @@
           position: absolute;
           width: 400px;
           height: 63px;
-          margin-top:18rem;
+          margin-top:17rem;
          margin-left: -3rem;
           
           background: #EDEDED;
@@ -110,7 +112,7 @@
           position: absolute;
           width: 400px;
           height: 63px;
-          margin-top:22rem;
+          margin-top:21rem;
          margin-left: -3rem;
           
           background: #EDEDED;
@@ -128,7 +130,7 @@
           <button type="submit" style="position: absolute;
           width: 258px;
           height: 68px;
-          margin-top :23rem;
+          margin-top :22rem;
          margin-left: 2rem;
           
           background: #27A906;
@@ -161,7 +163,7 @@
       <div class="col-sm-10 align-right">
 </div>
 <div>
-  <!--   
+  <div class="sonuc" >
       <?php
 /*
 
@@ -169,11 +171,12 @@
 WOMEN % body fat = 163.205 x log10 (waist + hip – neck) – 97.684 x log10 (height) – 78.387 
 MAN  % body fat = 86.010 x log10 (abdomen – neck) – 70.041 x log10 (height) + 36.76  
  */
-function calculate($boy, $bel, $boyun,$sex, $kalca)
+function calculate($boy, $boyun, $bel,$kalca, $sex)
 {
   $kadinyağorani = 163.205 * log10($bel + $kalca - $boyun) - 97.684 * log10($boy) - 88.387;
   $erkekyagorani = 86.010 *log10($bel - $boyun) - 70.041 * log10($boy) + 36.76 ;
   if ($_POST['sex']== "erkek"){
+   
     echo "Yağ oranı sonucunuz :". round($erkekyagorani ,2);
   }
   elseif($_POST['sex']== "kadın"){
@@ -188,15 +191,10 @@ $boyun = filter_var(htmlentities(floatval($_POST['boyun'])));
 $bel = filter_var(htmlentities(floatval($_POST['bel'])));
 $kalca = filter_var(htmlentities(floatval($_POST['kalca'])));
 $sex = $_POST['sex'];
-calculate($boy, $bel, $boyun, $sex,$kalca);
+calculate($boy, $boyun, $bel,$kalca, $sex);
 ?>
 
-
-
-
-
-
--->
+</div>
 </div>
     </div>
     </div>

@@ -10,6 +10,7 @@
 </head>
 <body>
   <nav>
+  <a href="../secim.html" style="position: absolute; top: 10px; right: 10px; padding: 30px 20px;  color:green; text-decoration: none;">Ana Sayfa</a>
     <div class="logo">
       <p><img src="../images/attachment_124010263-removebg-preview (1).png" alt=""></p>
       
@@ -17,7 +18,7 @@
     </div>
   </nav>
 
-<div class="sema">.
+<div class="sema">
   <header class="mt-3 text-center row">
 
     <div class="col-sm-10 align-right">
@@ -34,15 +35,18 @@
           <input type="number" class="form-control" id="weight" name="Kilo" style="box-sizing: border-box;
 
           /* Auto layout */
-          
+          position: absolute;
           display: flex;
           flex-direction: row;
           align-items: center;
           padding: 15px 30px;
           gap: 10px;
+          margin-top: 1.5rem;
+          margin-left: -5rem;
           
           width: 400px;
           height: 68px;
+
           
           background: #EDEDED;
           border: 1px solid #000000;
@@ -62,7 +66,7 @@
           <input class="form-control" id="height" name="BoyUzunluğu" type="number" style="box-sizing: border-box;
    
           /* Auto layout */
-          
+          position: absolute;
           display: flex;
           flex-direction: row;
           align-items: center;
@@ -71,6 +75,8 @@
           
           width: 400px;
           height: 68px;
+          margin-top: 6rem;
+          margin-left: -5rem;
           
           background: #EDEDED;
           border: 1px solid #000000;
@@ -91,11 +97,12 @@
           <button type="submit"  name="Hesapla" style="
           width: 258px;
           height: 68px;
-          
+          position: absolute;
           background: #27A906;
           border-radius: 48px;
           
-          /* Inside auto layout */
+          margin-top: 7rem;
+          margin-left: -7rem;
           
           flex: none;
           order: 3;
@@ -103,8 +110,10 @@
           > <h5 style="position: absolute;
           width: 130px;
           height: 40px;
-          left: 98px;
-          top: 14px;
+          left: 80px;
+          top: 12px;
+         
+          
           
           font-family: 'Rubik';
           font-style: normal;
@@ -115,7 +124,7 @@
           
           letter-spacing: 0.1em;
           
-          color: #FFFFFF;">Hesapla</h5>
+          color: #ffffff;">Hesapla</h5>
         </button>
         </div>
       </div>
@@ -125,36 +134,26 @@
       <div class="col-sm-2"></div>
       <div class="col-sm-10 align-right">
 
-<!--
+<div class="sonuc">
       <?php
  function calculate($uzunluk, $kilo)
 {
     $idealkilo = ($uzunluk - 100 - (($uzunluk - 150) / 4));
     $message1 = "İdeal kilonuzun üzerindesiniz
-    kilo vermek ve ideal kilonuza ulaşmak için bunları yapabilirsiniz:
-        1) Gün içindeki hareketlerinizi arttırın.
-        2) Dengeli beslenin şeker tuz karbonhidrat tüketiminize dikkat edin 
-        3) Geç saatlerde yemek yemeyin. 
-        4) Daha çok su için. 
-        5) Kilo vermek için doğal, işlenmemiş gıdaları tercih edin " ;
+     " ;
 
     $message2 = "İdeal kilonuzun altınızdasınız  
-      kilo almak ve ideal kilonuza ulaşmak için bunları yapablirsiniz:
-        1)Sağlıklı Karbonhidratları Tercih Edin
-        2)Yemekle Beraber Sıvı Tüketmeyin.
-        3)Sık Sık Beslenin. 
-        4)Hacmi Küçük Kalorisi Yüksek Besinleri Tüketin.
-        5)Kaliteli bir uykuyu ihmal etmeyin 
+      
         ";
     $fark = $idealkilo - $kilo;
     $index = ($kilo / $uzunluk / $uzunluk) * 10000;
     $bmiRounded = round($index, 1);
 
     if ($idealkilo - $kilo < 0) {
-        echo "<h4>İdeal kilonuz = " . "$idealkilo" . "İdeal kilonuza ulaşmanız için vermeniz gereken " . abs($fark) . " kg kaldı </h4>";
+        echo "<h4>İdeal kilonuz =  " . "$idealkilo". " İdeal kilonuza ulaşmanız  için vermeniz gereken " . abs($fark) . " kg kaldı </h4>";
         echo "<h4>$message1</h4>";
     } else {
-        echo "<h4>İdeal kilonuz = " . "$idealkilo"  . "İdeal kilonuza ulaşmanız için almanız gereken " . "$fark" . " kg kaldı </h4>";
+        echo "<h4>İdeal kilonuz = " . "$idealkilo" . " İdeal kilonuza ulaşmanız  için almanız gereken " . "$fark" . " kg kaldı </h4>";
         echo "<h4>$message2</h4>";
     }
 }
@@ -165,9 +164,9 @@ $uzunluk = filter_var(htmlentities(floatval($_POST['BoyUzunluğu'])), FILTER_SAN
 $kilo = filter_var(htmlentities(floatval($_POST['Kilo'])), FILTER_SANITIZE_NUMBER_FLOAT);
 calculate($uzunluk, $kilo);
 ?>
--->
 
 
+</div>
     </div>
 
   </div>
