@@ -219,17 +219,18 @@ Kadınlar için: BMR = (10 x ağırlık kg) + (6.25 x boy cm) - (5 x yaş) - 161
     else{
         echo "Lütfen cinsiyeti kadın veya erkek diye giriniz";
     }
+    $boy = filter_var(htmlentities(floatval($_POST['boy'])), FILTER_SANITIZE_NUMBER_FLOAT);
+$kilo = filter_var(htmlentities(floatval($_POST['kilo'])), FILTER_SANITIZE_NUMBER_FLOAT);
+$sex = $_POST['sex'];
+$yas = $_POST['yas'];
+calculate($boy, $kilo ,$sex,$yas);
 }
 
 /*
 Kadınlarda: 655 + 9,6 X (kg cinsinden ağırlık) + 1,8 X (santim cinsinden boy) - 4,7 X (yaş)
 Erkeklerde: 66 + 13,7 X (kg cinsinden ağırlık) + 5 X (santim cinsinden boy) - 6,8 X (yaş)
 */
-$boy = filter_var(htmlentities(floatval($_POST['boy'])), FILTER_SANITIZE_NUMBER_FLOAT);
-$kilo = filter_var(htmlentities(floatval($_POST['kilo'])), FILTER_SANITIZE_NUMBER_FLOAT);
-$sex = $_POST['sex'];
-$yas = $_POST['yas'];
-calculate($boy, $kilo ,$sex,$yas);
+
 ?>
 
 </div>
