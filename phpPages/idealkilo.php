@@ -32,7 +32,7 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label" for="weight"></label>
               <div class="col-sm-10">
-                <input type="number" class="form-control" id="weight" name="Kilo" style=" box-sizing: border-box;
+                <input type="number" class="form-control" id="weight" name="kilo" style=" box-sizing: border-box;
 
           
           
@@ -61,7 +61,7 @@
             <div class="form-group row">
               <label class="col-sm-2 col-form-label" for="height"></label>
               <div class="col-sm-10">
-                <input class="form-control" id="height" name="BoyUzunluğu" type="number" style=" box-sizing: border-box;
+                <input class="form-control" id="height" name="boy" type="number" style=" box-sizing: border-box;
 
           /* Auto layout */
           
@@ -175,19 +175,16 @@
     <div class="sonuc3">
       <?php
    
-function calculate($uzunluk, $kilo)
+function calculate($boy, $kilo)
 {
-    $idealkilo = ($uzunluk - 100 - (($uzunluk - 150) / 4));
-    $message1 = "İdeal kilonuzun üzerindesiniz :";
-        
-      
-      
+  
 
+    $idealkilo = ($boy - 100 - (($boy - 150) / 4));
+    $message1 = "İdeal kilonuzun üzerindesiniz :";
     $message2 = "İdeal kilonuzun altınızdasınız:" ;
       
-      
     $fark = $idealkilo - $kilo;
-    $index = ($kilo / $uzunluk / $uzunluk) * 10000;
+    $index = ($kilo / $boy / $boy) * 10000;
     $bmiRounded = round($index, 1);
 
     if ($idealkilo - $kilo < 0) {
@@ -197,13 +194,16 @@ function calculate($uzunluk, $kilo)
         echo "<h4>İdeal kilonuz =" . "$idealkilo" . "İdeal kilonuza ulaşmanız için almanız gereken " . "$fark" . " kg kaldı </h4>";
         echo "<h4>$message2</h4>";
     }
+    $boy = filter_var(htmlentities(floatval($_POST['boy'])), FILTER_SANITIZE_NUMBER_FLOAT);
+  $kilo = filter_var(htmlentities(floatval($_POST['kilo'])), FILTER_SANITIZE_NUMBER_FLOAT);
+  $sex = isset($_POST['sex']) ? $_POST['sex'] : '';
+  
+  if ($boy && $kilo && $sex) {
+    calculate($boy, $kilo, $sex);
+  } else {
+    echo "Lütfen tüm alanları doldurun.";
+  }
 }
-
-//Boy-100-[(boy-150)/4] ideal kilo formulu
-
-$uzunluk = filter_var(htmlentities(floatval($_POST['BoyUzunluğu'])), FILTER_SANITIZE_NUMBER_FLOAT);
-$kilo = filter_var(htmlentities(floatval($_POST['Kilo'])), FILTER_SANITIZE_NUMBER_FLOAT);
-calculate($uzunluk, $kilo);
 ?>
     </div>
   </div>
