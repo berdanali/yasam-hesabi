@@ -24,7 +24,6 @@
     <div class="col-sm-10 align-right">
 	
       <h4 class="text-secondary ">BEDEN KÜTLE İNDEKSİ HESAPLAMA</h4>
-	  
     </div>
   </header>
   <div class="container mt-3">
@@ -156,13 +155,14 @@
         echo "<h4>İdeal kilonuz = " . "$idealkilo" . " İdeal kilonuza ulaşmanız  için almanız gereken " . "$fark" . " kg kaldı </h4>";
         echo "<h4>$message2</h4>";
     }
+    $uzunluk = filter_var(htmlentities(floatval($_POST['BoyUzunluğu'])), FILTER_SANITIZE_NUMBER_FLOAT);
+$kilo = filter_var(htmlentities(floatval($_POST['Kilo'])), FILTER_SANITIZE_NUMBER_FLOAT);
+calculate($uzunluk, $kilo);
 }
 
 //Boy-100-[(boy-150)/4] ideal kilo formulu
 
-$uzunluk = filter_var(htmlentities(floatval($_POST['BoyUzunluğu'])), FILTER_SANITIZE_NUMBER_FLOAT);
-$kilo = filter_var(htmlentities(floatval($_POST['Kilo'])), FILTER_SANITIZE_NUMBER_FLOAT);
-calculate($uzunluk, $kilo);
+
 ?>
 
 
