@@ -15,8 +15,6 @@
   <a href="../secim.html" style="position: absolute; top: 10px; right: 10px; padding: 30px 20px;  color:green; text-decoration: none;">Ana Sayfa</a>
     <div class="logo">
       <p><img src="../images/attachment_124010263-removebg-preview (1).png" alt=""></p>
-      
-
     </div>
   </nav>
 
@@ -25,7 +23,7 @@
     <div class="sema">
     <header class="mt-3 text-center row">
     <div class="col-sm-10 align-right">
-      <h4>Günlük Protein Hesaplama</h4>
+      <h4>Günlük Proteiasdadn Hesaplama</h4>
       </div>
   </header>
     </div>

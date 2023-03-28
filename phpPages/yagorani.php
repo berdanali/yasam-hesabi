@@ -185,15 +185,14 @@ function calculate($boy, $boyun, $bel,$kalca, $sex)
   else{
     echo "Lütfen cinsiyeti kadın veya erkek olarak girin";
   }
-}
-$boy = filter_var(htmlentities(floatval($_POST['boy'])), FILTER_SANITIZE_NUMBER_FLOAT);
+  $boy = filter_var(htmlentities(floatval($_POST['boy'])), FILTER_SANITIZE_NUMBER_FLOAT);
 $boyun = filter_var(htmlentities(floatval($_POST['boyun'])));
 $bel = filter_var(htmlentities(floatval($_POST['bel'])));
 $kalca = filter_var(htmlentities(floatval($_POST['kalca'])));
 $sex = $_POST['sex'];
 calculate($boy, $boyun, $bel,$kalca, $sex);
+}
 ?>
-
 </div>
 </div>
     </div>
